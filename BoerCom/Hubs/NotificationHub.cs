@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.SignalR;
+﻿using System;
+using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 
 namespace BoerCom.Hubs
@@ -6,9 +7,10 @@ namespace BoerCom.Hubs
     [HubName("BoerHub")]
     public class NotificationHub : Hub
     {
-        public void NotifyAll(string name, string message)
+        public void NotifyAll(string message)
         {
-            Clients.All.broadCastAll(name, message);
+            Console.WriteLine(message);
+            Clients.All.BroadCastAll(message);
         }
     }
 }

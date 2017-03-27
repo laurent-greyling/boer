@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Channels;
 using Microsoft.Owin.Hosting;
 
 namespace BoerCom
@@ -11,7 +12,8 @@ namespace BoerCom
             // use http://*:8080 to bind to all addresses. 
             // See http://msdn.microsoft.com/en-us/library/system.net.httplistener.aspx 
             // for more information.
-            const string url = "http://localhost:8080";
+            const string url = "http://127.0.0.1:8080";
+
             using (WebApp.Start(url))
             {
                 Console.WriteLine($"Server running on {url}");

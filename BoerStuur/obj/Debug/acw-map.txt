@@ -1,0 +1,4 @@
+BoerStuur.MainActivity, BoerStuur;md5edefc134e3de18d2a7afe22de0e7e233.MainActivity
+BoerStuur.MainActivity, BoerStuur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5edefc134e3de18d2a7afe22de0e7e233.MainActivity
+BoerStuur.MainActivity;md5edefc134e3de18d2a7afe22de0e7e233.MainActivity
+boerstuur.MainActivity;md5edefc134e3de18d2a7afe22de0e7e233.MainActivity

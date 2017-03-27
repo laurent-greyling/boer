@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Android.App;
 using Android.OS;
+using Android.Widget;
 using Microsoft.AspNet.SignalR.Client;
 
 namespace BoerStuur
@@ -19,23 +21,32 @@ namespace BoerStuur
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
 
-            _chatConnection = new HubConnection("http://169.254.80.80:8080/");
+            _chatConnection = new HubConnection("http://10.0.2.2:8080/");
             _signalRChatHub = _chatConnection.CreateHubProxy("BoerHub");
 
-            _signalRChatHub.On<string>("broadCastAll", message =>
+            _signalRChatHub.On<string>("BroadCastAll", message =>
             {
                 OnMessageReceived?.Invoke(this, $"{message}");
             });
 
             await JoinChat();
+            
             Chat("Stuur");
+
+            //_signalRChatHub.On<string>("broadCastAll", message =>
+            //{
+            //    OnMessageReceived?.Invoke(this, $"{message}");
+            //});
+            
         }
 
         public virtual async Task JoinChat()
         {
             try
             {
+                Toast.MakeText(this, "Connecting to server", ToastLength.Long).Show();
                 await _chatConnection.Start();
+                Toast.MakeText(this, $"Connection State {_chatConnection.State}", ToastLength.Long).Show();
             }
             catch (Exception)
             {
@@ -45,8 +56,19 @@ namespace BoerStuur
 
         public virtual async void Chat(string phoneChatMessage)
         {
-            if (_chatConnection.State == ConnectionState.Connected)
-                await _signalRChatHub.Invoke("NotificationHub", phoneChatMessage);
+            try
+            {
+                if (_chatConnection.State != ConnectionState.Connected) return;
+
+                Toast.MakeText(this, $"Sending {phoneChatMessage}", ToastLength.Long).Show();
+                await _signalRChatHub.Invoke("NotifyAll", phoneChatMessage);
+            }
+            catch (Exception ex)
+            {
+                var ff = ex.Message;
+                // TODO Do some error handling.
+            }
+            
         }
     }
 

@@ -20,24 +20,26 @@ namespace BoerOntvang
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.Main);
 
-            _chatConnection = new HubConnection("http://169.254.80.80:8080/");
+            _chatConnection = new HubConnection("http://10.0.2.2:8080/");
             _signalRChatHub = _chatConnection.CreateHubProxy("BoerHub");
 
-            _signalRChatHub.On<string>("broadCastAll", message =>
+            _signalRChatHub.On<string>("BroadCastAll", message =>
             {
                 OnMessageReceived?.Invoke(this, $"{message}");
             });
 
             await JoinChat();
-
+            
             var messages = FindViewById<ListView>(Resource.Id.ChatMessages);
 
             var adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, new List<string>());
             messages.Adapter = adapter;
             OnMessageReceived += (sender, message) => RunOnUiThread(() =>
             adapter.Add(message));
+            
+            Toast.MakeText(this, $"Receiving {OnMessageReceived}", ToastLength.Long).Show();
 
-            Chat();
+            Chat("Ontvang");
         }
         public virtual async Task JoinChat()
         {
@@ -51,10 +53,11 @@ namespace BoerOntvang
             }
         }
 
-        public virtual async void Chat()
+        public virtual async void Chat(string message)
         {
-            if (_chatConnection.State == ConnectionState.Connected)
-                await _signalRChatHub.Invoke("NotificationHub");
+            if (_chatConnection.State != ConnectionState.Connected) return;
+            Toast.MakeText(this, $"{message}", ToastLength.Long).Show();
+            await _signalRChatHub.Invoke("NotifyAll", message);
         }
     }
 }

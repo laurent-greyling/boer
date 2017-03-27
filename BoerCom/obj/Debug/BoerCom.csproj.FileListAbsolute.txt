@@ -5,6 +5,7 @@ E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.AspNet.SignalR.SystemWeb.dll
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Cors.dll
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.dll
+E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Hosting.dll
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Security.dll
@@ -15,6 +16,7 @@ E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.AspNet.SignalR.SystemWeb.xml
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.xml
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Cors.xml
+E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Hosting.xml
 E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Security.xml
@@ -22,5 +24,3 @@ E:\R&D\Boer\BoerCom\bin\Debug\Newtonsoft.Json.xml
 E:\R&D\Boer\BoerCom\obj\Debug\BoerCom.csprojResolveAssemblyReference.cache
 E:\R&D\Boer\BoerCom\obj\Debug\BoerCom.exe
 E:\R&D\Boer\BoerCom\obj\Debug\BoerCom.pdb
-E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
-E:\R&D\Boer\BoerCom\bin\Debug\Microsoft.Owin.Host.HttpListener.xml

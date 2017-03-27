@@ -1,0 +1,4 @@
+BoerOntvang.MainActivity, BoerOntvang;md51462bd51563041776707bf01c1705b24.MainActivity
+BoerOntvang.MainActivity, BoerOntvang, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md51462bd51563041776707bf01c1705b24.MainActivity
+BoerOntvang.MainActivity;md51462bd51563041776707bf01c1705b24.MainActivity
+boerontvang.MainActivity;md51462bd51563041776707bf01c1705b24.MainActivity
