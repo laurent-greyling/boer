@@ -4,10 +4,10 @@ A signalR notification app
 # BoerCom
 SignalR server - console app
 
-#BoerStuur
+# BoerStuur
 Purpose - send signalr message via server - xamarin android app
 
-#BoerOntvang
+# BoerOntvang
 Purpose - receive message from from BoerStuur - xamarin android app
 
 
