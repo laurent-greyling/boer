@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Android.App;
 using Android.OS;
@@ -32,12 +31,6 @@ namespace BoerStuur
             await JoinChat();
             
             Chat("Stuur");
-
-            //_signalRChatHub.On<string>("broadCastAll", message =>
-            //{
-            //    OnMessageReceived?.Invoke(this, $"{message}");
-            //});
-            
         }
 
         public virtual async Task JoinChat()
@@ -48,9 +41,10 @@ namespace BoerStuur
                 await _chatConnection.Start();
                 Toast.MakeText(this, $"Connection State {_chatConnection.State}", ToastLength.Long).Show();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // TODO Do some error handling.
+                Toast.MakeText(this, $"Connection State {ex.Message}", ToastLength.Long).Show();
             }
         }
 
@@ -65,8 +59,8 @@ namespace BoerStuur
             }
             catch (Exception ex)
             {
-                var ff = ex.Message;
                 // TODO Do some error handling.
+                Toast.MakeText(this, $"Connection State {ex.Message}", ToastLength.Long).Show();
             }
             
         }

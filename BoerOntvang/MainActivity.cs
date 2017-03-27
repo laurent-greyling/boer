@@ -36,8 +36,6 @@ namespace BoerOntvang
             messages.Adapter = adapter;
             OnMessageReceived += (sender, message) => RunOnUiThread(() =>
             adapter.Add(message));
-            
-            Toast.MakeText(this, $"Receiving {OnMessageReceived}", ToastLength.Long).Show();
 
             Chat("Ontvang");
         }
@@ -45,19 +43,30 @@ namespace BoerOntvang
         {
             try
             {
+                Toast.MakeText(this, "Connecting to server", ToastLength.Long).Show();
                 await _chatConnection.Start();
+                Toast.MakeText(this, $"Connection State {_chatConnection.State}", ToastLength.Long).Show();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 // TODO Do some error handling.
+                Toast.MakeText(this, $"Connection State {ex.Message}", ToastLength.Long).Show();
             }
         }
 
         public virtual async void Chat(string message)
         {
-            if (_chatConnection.State != ConnectionState.Connected) return;
-            Toast.MakeText(this, $"{message}", ToastLength.Long).Show();
-            await _signalRChatHub.Invoke("NotifyAll", message);
+            try
+            {
+                if (_chatConnection.State != ConnectionState.Connected) return;
+                Toast.MakeText(this, $"{message}", ToastLength.Long).Show();
+                await _signalRChatHub.Invoke("NotifyAll", message);
+            }
+            catch (Exception ex)
+            {
+                //TODO do something with exception
+                Toast.MakeText(this, $"Connection State {ex.Message}", ToastLength.Long).Show();
+            }
         }
     }
 }
