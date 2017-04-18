@@ -14,5 +14,6 @@ Purpose - receive message from from BoerStuur and display messages on start - xa
 ## Notification resources
 
 see [here](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/firebase-cloud-messaging/)
+[here](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/remote-notifications-with-fcm/)
 
 
