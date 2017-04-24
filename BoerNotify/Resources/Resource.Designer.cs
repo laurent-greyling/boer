@@ -202,6 +202,9 @@ namespace BoerNotify
 			// aapt resource value: 0x7f070008
 			public const int light = 2131165192;
 			
+			// aapt resource value: 0x7f07000a
+			public const int logTokenButton = 2131165194;
+			
 			// aapt resource value: 0x7f070009
 			public const int msgText = 2131165193;
 			

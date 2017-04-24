@@ -10,11 +10,10 @@ namespace BoerNotify.Helpers
     [IntentFilter(new []{ "com.google.firebase.INSTANCE_ID_EVENT" })]
     public class MyFirebaseIidService : FirebaseInstanceIdService
     {
-        const string TAG = "MyFirebaseIIDService";
         public override void OnTokenRefresh()
         {
             var refreshedToken = FirebaseInstanceId.Instance.Token;
-            Log.Debug(TAG, "Refreshed token: " + refreshedToken);
+            Log.Debug(Tags.MyFirebaseIidService, "Refreshed token: " + refreshedToken);
             SendRegistrationToServer(refreshedToken);
         }
 

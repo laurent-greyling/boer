@@ -1,15 +1,9 @@
-﻿using System;
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
+﻿using Android.App;
 using Android.Widget;
 using Android.OS;
-using Android.Gms.Common;
-using Firebase.Messaging;
-using Firebase.Iid;
 using Android.Util;
 using BoerNotify.Helpers;
+using Firebase.Iid;
 
 namespace BoerNotify
 {
@@ -29,8 +23,24 @@ namespace BoerNotify
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+            if (Intent.Extras != null)
+            {
+                foreach (var key in Intent.Extras.KeySet())
+                {
+                    var value = Intent.Extras.GetString(key);
+                    Log.Debug(Tags.IntentInfo, $"Key: {key} Value: {value}");
+                }
+            }
+
             _playServices.MsgText = FindViewById<TextView>(Resource.Id.msgText);
             _playServices.IsPlayServicesAvailable();
+
+            // Only to get the token for testing, can be removed after the fact
+            var logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
+            logTokenButton.Click += delegate {
+                Log.Debug(Tags.MyFirebaseIidService, "InstanceID token: " + FirebaseInstanceId.Instance.Token);
+            };
         }
     }
 }
