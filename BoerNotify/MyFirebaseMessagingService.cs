@@ -12,6 +12,8 @@ namespace BoerNotify
     {
         public override void OnMessageReceived(RemoteMessage message)
         {
+            base.OnMessageReceived(message);
+
             Log.Debug(Tags.MyFirebaseMsgService, $"From: {message.From}");
             Log.Debug(Tags.MyFirebaseMsgService, $"Notification Message Body: {message.GetNotification().Body}");
             SendNotification(message.GetNotification().Body);

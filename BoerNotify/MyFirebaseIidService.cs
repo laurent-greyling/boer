@@ -13,7 +13,7 @@ namespace BoerNotify
         {
             var refreshedToken = FirebaseInstanceId.Instance.Token;
             Log.Debug(Tags.MyFirebaseIidService, "Refreshed token: " + refreshedToken);
-            SendRegistrationToServer(refreshedToken);
+            //SendRegistrationToServer(refreshedToken);
         }
 
         private static void SendRegistrationToServer(string token)
