@@ -28,7 +28,9 @@ keytool.exe -list -v -keystore "%LocalAppData%\Xamarin\Mono for Android\debug.ke
  
 ### Notification resources
 
-see [here](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/firebase-cloud-messaging/)
-[here](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/remote-notifications-with-fcm/)
+[Remote Notifications with Firebase Cloud Messaging](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/firebase-cloud-messaging/)
+
+[Firebase Cloud Messaging](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/remote-notifications-with-fcm/)
+
 
 
