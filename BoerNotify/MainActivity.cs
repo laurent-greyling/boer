@@ -39,7 +39,7 @@ namespace BoerNotify
             // Only to get the token for testing, can be removed after the fact
             var logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
             logTokenButton.Click += delegate {
-                Log.Debug(Tags.MyFirebaseIidService, "InstanceID token: " + FirebaseInstanceId.Instance.Token);
+                Log.Debug(Tags.MyFirebaseIidService, $"InstanceID token: {FirebaseInstanceId.Instance.Token}");
             };
         }
     }

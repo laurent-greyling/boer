@@ -1,10 +1,9 @@
-﻿using System;
-using Android.App;
-using Firebase.Iid;
+﻿using Android.App;
 using Android.Util;
+using BoerNotify.Helpers;
+using Firebase.Iid;
 
-
-namespace BoerNotify.Helpers
+namespace BoerNotify
 {
     [Service]
     [IntentFilter(new []{ "com.google.firebase.INSTANCE_ID_EVENT" })]
