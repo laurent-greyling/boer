@@ -1,6 +1,6 @@
 ## Boer
 - A signalR notification app in Xamarin. See BoerCom, BoerStuur, BoerOntvang
-- (Also want to do some things with push notifications)
+- FCM push notifications - [FireBase](https://console.firebase.google.com) 
 
 ## BoerCom
 SignalR server - console app
