@@ -32,5 +32,7 @@ keytool.exe -list -v -keystore "%LocalAppData%\Xamarin\Mono for Android\debug.ke
 
 [Firebase Cloud Messaging](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/remote-notifications-with-fcm/)
 
+[more](http://blog.ostebaronen.dk/2016/11/firebase-cloud-messaging-in.html)
+
 
 
