@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1043711487931-th5pebl6kp0lmljlee91a9155ukpgarr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.boernotify.android",
+            "certificate_hash": "0a467d910894eadf9c04dd620ac7be98b7b6efcc"
+          }
+        },
+        {
           "client_id": "1043711487931-18lbu3evcl4j7stfrtnqcusopgghicme.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

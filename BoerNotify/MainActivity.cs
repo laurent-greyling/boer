@@ -3,6 +3,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Util;
 using BoerNotify.Helpers;
+using Firebase;
 using Firebase.Iid;
 
 namespace BoerNotify
@@ -38,7 +39,9 @@ namespace BoerNotify
 
             // Only to get the token for testing, can be removed after the fact
             var logTokenButton = FindViewById<Button>(Resource.Id.logTokenButton);
-            logTokenButton.Click += delegate {
+            logTokenButton.Click += delegate
+            {
+                //_playServices.MsgText.Text = FirebaseInstanceId.Instance.Token;
                 Log.Debug(Tags.MyFirebaseIidService, $"InstanceID token: {FirebaseInstanceId.Instance.Token}");
             };
         }
