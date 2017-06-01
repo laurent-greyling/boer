@@ -11,6 +11,7 @@ namespace BoerMap.Shared
             const string locationProvider = LocationManager.GpsProvider;
             var location = new Location(locationProvider);
             
+            //TODO: find out why I end up not opening on pin but middle of ocean
             var map = new Map(
                 MapSpan.FromCenterAndRadius(new Position(location.Latitude, location.Longitude), Distance.FromKilometers(0.3)))
             {
