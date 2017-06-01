@@ -25,7 +25,12 @@ Add the directory containing keytool.exe to the PATH environment variable. Open 
 ```
 keytool.exe -list -v -keystore "%LocalAppData%\Xamarin\Mono for Android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
 ```
- 
+
+## BoerMap
+Just a small xamarin forms map application to. Want to grow this into also allow navigation. (Very basic code right now)
+
+[resource](https://developer.xamarin.com/guides/xamarin-forms/user-interface/map/)
+
 ### Notification resources
 
 [Remote Notifications with Firebase Cloud Messaging](https://developer.xamarin.com/guides/android/application_fundamentals/notifications/firebase-cloud-messaging/)
